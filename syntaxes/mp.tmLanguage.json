@@ -1,0 +1,107 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Mastercam Post",
+	"scopeName": "source.mp",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#postblocks"
+		},
+		{
+			"include": "#userpostblocks"
+		},
+		{
+			"include": "#symbols"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.mp",
+					"match": "\\b(if|else|while)\\b"
+				},
+				{
+					"name": "keyword.function.mp",
+					"match": "\\b(fbuf|fstack|fs2|fmt|fstrsel|flktbl|fprmtbl|flook|frac|fmtrnd|vsub|fprm|rpar|vequ|nwadrs|newfs|rparsngl|frange)\\b"
+				},
+				{
+					"name": "keyword.buffer.mp",
+					"match": "\\b(wbuf|rbuf|pop|push)\\b"
+				},
+				{
+					"name": "keyword.query.mp",
+					"match": "\\b(opinfo|cdinfo|groupinfo)\\b"
+				},
+				{
+					"name": "keyword.string.mp",
+					"match": "\\b(brksps|strstr|no2asc|no2str|strlen|drs_str|ucase|lcase)\\b"
+				},
+				{
+					"name": "keyword.constant.mp",
+					"match": "\b(yes\\$|no\\$)\b"
+				},
+				{
+					"name": "keyword.file.mp",
+					"match": "\\b(fexist|move|remove|mprint)\\b"
+				},
+				{
+					"name": "keyword.xor.mp",
+					"match": "\\b(and|or|not)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.mp",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+            "patterns": [{
+                "name": "comment.line.number-sign",
+                "match": "#.*"
+            }]
+        },
+		"variables": {
+            "patterns": [{
+                "name": "variable.language",
+				"match": "\\b[^p]\\w*\\$"
+            }]
+        },
+		"postblocks": {
+            "patterns": [{
+                "name": "markup.bold",
+                "match": "^[p].*\\w\\$"
+            }]
+        },
+		"userpostblocks": {
+            "patterns": [{
+                "name": "invalid.illegal",
+                "match": "^[p]\\w\\b"
+            }]
+        },
+		"symbols": {
+            "patterns": [{
+                "name": "invalid.illegal",
+                "match": "\\b\\*\\b"
+            }]
+        }
+	}
+}

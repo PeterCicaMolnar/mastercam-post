@@ -1,0 +1,31 @@
+{
+  "name": "mastercam-post",
+  "displayName": "Mastercam Post",
+  "description": "Mastercam Post-Processor",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mp",
+      "aliases": ["Mastercam Post", "mp"],
+      "extensions": [".pst"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mp",
+      "scopeName": "source.mp",
+      "path": "./syntaxes/mp.tmLanguage.json"
+    }],
+    "themes": [
+			{
+				"label": "MP Dark Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/mp-dark-theme.json"
+			}]
+  }
+}
