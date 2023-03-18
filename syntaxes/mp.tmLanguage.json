@@ -34,7 +34,11 @@
 				},
 				{
 					"name": "keyword.function.mp",
-					"match": "\\b(fbuf|fstack|fs2|fmt|fstrsel|flktbl|fprmtbl|flook|frac|fmtrnd|vsub|fprm|rpar|vequ|nwadrs|newfs|rparsngl|frange)\\b"
+					"match": "^(fbuf|fstack|fs2|fmt|fstrsel|flktbl|fprmtbl|fq)\\b"
+				},
+				{
+					"name": "keyword.function.mp",
+					"match": "\\b(flook|frac|fmtrnd|vsub|fprm|rpar|vequ|nwadrs|newfs|rparsngl|frange)\\b"
 				},
 				{
 					"name": "keyword.buffer.mp",
@@ -50,7 +54,7 @@
 				},
 				{
 					"name": "keyword.constant.mp",
-					"match": "\b(yes\\$|no\\$)\b"
+					"match": "\\b(yes\\$|no\\$)\\b"
 				},
 				{
 					"name": "keyword.file.mp",
@@ -59,6 +63,10 @@
 				{
 					"name": "keyword.xor.mp",
 					"match": "\\b(and|or|not)\\b"
+				},
+				{
+					"name": "keyword.region.mp",
+					"match": "^(#region|#endregion)\\b"
 				}
 			]
 		},
@@ -74,10 +82,16 @@
 			]
 		},
 		"comments": {
-            "patterns": [{
-                "name": "comment.line.number-sign",
-                "match": "#.*"
-            }]
+            "patterns": [
+				{
+					"name": "comment.line.number-sign",
+					"match": "#.*"
+				},
+				{
+					"name": "comment.region",
+					"match": "#region .*"
+				}
+			]
         },
 		"variables": {
             "patterns": [{
@@ -85,10 +99,11 @@
 				"match": "\\b[^p]\\w*\\$"
             }]
         },
+		
 		"postblocks": {
             "patterns": [{
                 "name": "markup.bold",
-                "match": "^[p].*\\w\\$"
+                "match": "\\bp\\w+\\$"
             }]
         },
 		"userpostblocks": {
