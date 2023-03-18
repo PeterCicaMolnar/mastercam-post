@@ -54,7 +54,7 @@
 				},
 				{
 					"name": "keyword.constant.mp",
-					"match": "\\b(yes\\$|no\\$)\\b"
+					"match": "\\b(yes$|no$)\\b"
 				},
 				{
 					"name": "keyword.file.mp",
@@ -67,8 +67,7 @@
 				{
 					"name": "keyword.region.mp",
 					"match": "^(#region|#endregion)\\b"
-				}
-			]
+				}]
 		},
 		"strings": {
 			"name": "string.quoted.double.mp",
@@ -78,20 +77,13 @@
 				{
 					"name": "constant.character.escape",
 					"match": "\\\\."
-				}
-			]
+				}]
 		},
 		"comments": {
-            "patterns": [
-				{
-					"name": "comment.line.number-sign",
+            "patterns": [{
+					"name": "comment.line",
 					"match": "#.*"
-				},
-				{
-					"name": "comment.region",
-					"match": "#region .*"
-				}
-			]
+				}]
         },
 		"variables": {
             "patterns": [{
@@ -108,8 +100,8 @@
         },
 		"userpostblocks": {
             "patterns": [{
-                "name": "invalid.illegal",
-                "match": "^[p]\\w\\b"
+                "name": "postblock.user",
+                "match": "^p\\w+\\s"
             }]
         },
 		"symbols": {

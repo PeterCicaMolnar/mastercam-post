@@ -12,6 +12,7 @@
 			"name": "Comment",
 			"scope": [
 				"comment",
+				"comment.region",
 				"punctuation.definition.comment"
 			],
 			"settings": {
@@ -56,7 +57,8 @@
 				"storage.modifier"
 			],
 			"settings": {
-				"foreground": "#C792EA"
+				"fontStyle": "bold",
+				"foreground": "#5188e7"
 			}
 		},
 
@@ -67,6 +69,17 @@
 			],
 			"settings": {
 				"foreground": "#9942d3"
+			}
+		},
+
+		{
+			"name": "User postblock",
+			"scope": [
+				"postblock.user"
+			],
+			"settings": {
+				"fontStyle": "bold",
+				"foreground": "#B2CCD6"
 			}
 		},
 
